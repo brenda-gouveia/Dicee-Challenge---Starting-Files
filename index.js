@@ -1,17 +1,31 @@
-function randomNumber1() {
+function randomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-function imgChange(numb_dice, jogador){
+function imgChange(numb_dice, classe){
 
-    document.querySelector(".img1").setAttribute("src", "images/dice" + numb_dice + ".png");
+    document.querySelector(classe).setAttribute("src", "images/dice" + numb_dice + ".png");
 
 }
-//  document.querySelector(".container").textContent = 'Player 1 Wins!'
 
 function main() {
-    const diceNumber = randomNumber1();
-    imgChange(diceNumber, 1);
+    const diceNumber1 = randomNumber();
+    const diceNumber2 = randomNumber();
+
+    const id1 = ".img1";
+    const id2= ".img2";
+
+    imgChange(diceNumber1, id1);
+    imgChange(diceNumber2, id2);
+
+    if (diceNumber1 > diceNumber2){
+        document.querySelector("h1").textContent = 'Player 1 Wins!';
+    } else if (diceNumber1 < diceNumber2){
+        document.querySelector("h1").textContent = 'Player 2 Wins!';
+    } else {
+        document.querySelector("h1").textContent = 'Draw!';
+    }
+    
    
   }
 
