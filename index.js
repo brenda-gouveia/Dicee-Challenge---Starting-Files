@@ -1,3 +1,6 @@
+/* This code is for the dice game. It generates random numbers for two dice and displays the winner based on the numbers generated. 
+    If the numbers are the same, it displays a draw. */
+
 function randomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
