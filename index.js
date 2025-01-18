@@ -21,15 +21,19 @@ function main() {
     imgChange(diceNumber1, id1);
     imgChange(diceNumber2, id2);
 
-    if (diceNumber1 > diceNumber2){
+    if (diceNumber1 > diceNumber2) {
         document.querySelector("h1").textContent = 'Player 1 Wins!';
-    } else if (diceNumber1 < diceNumber2){
+    } else if (diceNumber1 < diceNumber2) {
         document.querySelector("h1").textContent = 'Player 2 Wins!';
     } else {
         document.querySelector("h1").textContent = 'Draw!';
     }
-    
-   
-  }
+}
 
-main();
+// Verifica se é o primeiro carregamento da página
+if (sessionStorage.getItem('flag') === null) {
+    document.querySelector("h1").textContent = 'Refresh Me';
+    sessionStorage.setItem('flag', '1');
+} else {
+    main();
+}
